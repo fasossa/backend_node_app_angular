@@ -31,6 +31,7 @@ npx sequelize-cli init
 ```
 
 ------
+# Comandos de GIT y GitHub
 ## Descargar e Instalar GIT
 ```
 http://git-scm.com/
@@ -43,7 +44,7 @@ git config --global user.email "mi correo"
 ```
 - Crear una cuenta github o bitbucket o Gitlab
 
-## Inicializar un nuevo repositorio Login local
+## Inicializar un nuevo repositorio Login local o clonar
 - para crear un nuevo repositorio
 ```bash
 git init 
@@ -51,4 +52,29 @@ git init
 - para clocar un repositorio existente
 ```bash
 git clone 
+```
+- para ignorar archivos y carpetas
+- creamos un archivo (.gitignore) y registramos los archivos y carpetas
+```
+/node_modules
+/dist 
+package-lock.json
+.env
+```
+## Registrar el repositorio remoto (GITHUB, GITBUCKET o GITLAB)
+- en este caso con GITHUB
+```
+git remote add origin https://github.com/fasossa/backend_node_app_angular.git
+```
+## Para registrar todos los archivos al index
+```
+git add .
+```
+## Para agregar o registrar los cambios agregamos un mensaje commit (head)
+```
+git commit -m "configuracion base de proyecto node"
+```
+## Para subir todos los cambios al repositorio remoto
+```
+git push -u origin master
 ```
