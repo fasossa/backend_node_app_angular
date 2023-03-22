@@ -21,7 +21,7 @@ export async function login(req, res) {
 
    // verificamos si es usuario existe
    if(!user){
-        return res.status(200).send({
+        return res.status(422).send({
             mensaje: "Credenciales incorrectas"
         })
    }
@@ -36,7 +36,7 @@ export async function login(req, res) {
         time: new Date()        
     }
 
-    const token = jwt.sign(payload, "MI_CODIGO_SECRETO",{
+    const token = jwt.sign(payload, "MI_CODIGO_SECRETO", {
         expiresIn: 60*60
     })
 
@@ -47,7 +47,7 @@ export async function login(req, res) {
     })
         
    }else{
-        return res.status(200).send({
+        return res.status(422).send({
             mensaje: "Password incorrecto"
         })
    }
